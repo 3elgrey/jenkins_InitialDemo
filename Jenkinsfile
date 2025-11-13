@@ -38,11 +38,11 @@ pipeline {
         )
     }
 
-    environment {
-        MAVEN_HOME = tool 'Maven'  // Ensure "Maven" tool is configured in Jenkins
-        JAVA_HOME = tool 'JDK21'   // Or whatever JDK name you set in Jenkins Global Tool Config
-        PATH = "${MAVEN_HOME}/bin:${JAVA_HOME}/bin:${env.PATH}"
-    }
+    // environment {
+    //     MAVEN_HOME = tool 'Maven'  // Ensure "Maven" tool is configured in Jenkins
+    //     JAVA_HOME = tool 'JDK21'   // Or whatever JDK name you set in Jenkins Global Tool Config
+    //     PATH = "${MAVEN_HOME}/bin:${JAVA_HOME}/bin:${env.PATH}"
+    // }
 
     stages {
         stage('Checkout') {
