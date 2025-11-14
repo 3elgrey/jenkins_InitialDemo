@@ -3,9 +3,9 @@ pipeline {
 
     parameters{
 
-        booleanParam{defaultValue: false, description: "Production environment", name: "PROD"}
-        string{defaultValue: "TEST", description: "Test scripts", name: "Testing"}
-        choice{ choices: ["TEST", "DEV", "QA", "PRE-PROD"], description: "Environment to run the job", name: "Env"}
+        booleanParam(name: 'PROD', defaultValue: false, description: 'Production environment')
+        string(name: 'VERSION', defaultValue: '1.0', description: 'App version')
+        choice(name: "Env", choices: ["TEST", "DEV", "QA", "PRE-PROD"], description: "Environment to run the job")
         
     }
 
