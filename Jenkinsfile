@@ -1,6 +1,14 @@
 pipeline {
     agent any
 
+    parameters{
+
+        booleanParam{ defaultValue : false, description: "Production environment", name : "PROD"}
+        string{defaultValue : "TEST", description: "Test scripts", name : "Testing"}
+        choice{ choices : ["TEST", "DEV", "QA", "PRE-PROD"], description: "Environment to run the job", name : "Env"}
+        
+    }
+
     stages {
         stage('Clean Up') {
             steps {
