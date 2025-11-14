@@ -19,7 +19,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building...'
-                dir('jenkins_InitialDemo/java-login-app') {
+                dir('jenkins_InitialDemo') {
                     sh 'TERM=dumb mvn -Dstyle.color=never clean install'
                 }
             }
@@ -28,7 +28,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing...'
-                dir('jenkins_InitialDemo/java-login-app') {
+                dir('jenkins_InitialDemo') {
                     sh 'TERM=dumb mvn -Dstyle.color=never test'
                 }
             }
